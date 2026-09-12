@@ -1,0 +1,3 @@
+Implemented producer-consumer communication using anonymous pipes.
+Measured basic communication time between processes.
+Implemented ls -l | grep ".c" using pipe(), dup2(), and exec().
