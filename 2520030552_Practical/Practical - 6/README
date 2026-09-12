@@ -1,0 +1,3 @@
+Implemented client-server communication using Named Pipes (FIFOs).
+Studied FIFO behavior with multiple clients.
+Implemented signal handling for SIGINT, SIGTERM, and SIGUSR1.
