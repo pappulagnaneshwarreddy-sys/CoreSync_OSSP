@@ -1,3 +1,15 @@
-Implemented client-server communication using Named Pipes (FIFOs).
-Studied FIFO behavior with multiple clients.
-Implemented signal handling for SIGINT, SIGTERM, and SIGUSR1.
+OS Lab – FIFO and POSIX Signals
+Named Pipes (FIFO) and their uses:-
+mkfifo() – Creates a named pipe for communication between processes.
+open() – Opens the FIFO for reading or writing.
+read() – Reads messages from the FIFO.
+write() – Sends messages through the FIFO.
+fork() – Creates a new process to handle multiple clients.
+unlink() – Removes the FIFO after communication is completed.
+POSIX Signals and their uses:-
+SIGINT – Interrupts the running process, usually using Ctrl+C.
+SIGTERM – Requests the process to terminate.
+SIGUSR1 – Used for sending a user-defined signal to a process.
+signal() – Registers a signal handler for a specific signal.
+Signal Handler – Handles the signal when it is received asynchronously.
+kill() – Sends a signal to another process using its process ID
