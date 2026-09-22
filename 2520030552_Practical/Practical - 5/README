@@ -1,3 +1,22 @@
-Implemented producer-consumer communication using anonymous pipes.
-Measured basic communication time between processes.
-Implemented ls -l | grep ".c" using pipe(), dup2(), and exec().
+Inter-Process Communication (IPC)
+1. Producer–Consumer using Anonymous Pipe
+Parent Process = Producer → generates and sends data.
+Child Process = Consumer → receives and consumes the data.
+pipe() → creates an anonymous pipe for communication between processes.
+fork() → creates the child process.
+write() → producer sends data through the pipe.
+read() → consumer receives data from the pipe.
+The pipe provides communication between the parent and child processes.
+2. Implementing ls | grep ".c"
+This program implements the shell command ls | grep ".c" using system calls.
+fork() → creates child processes for executing the commands.
+pipe() → creates a communication channel between the processes.
+dup2() → redirects the standard input/output to the pipe.
+execlp() / exec*() → replaces the child process with the required commands such as ls and grep.
+The output of ls is passed through the pipe as input to grep.
+3. Communication Efficiency
+Communication efficiency is calculated using the number of items processed and the time taken for communication.
+
+Formula:
+
+Communication Efficiency = Number of Items / Communication Time
