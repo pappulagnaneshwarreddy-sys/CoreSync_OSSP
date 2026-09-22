@@ -1,3 +1,21 @@
-Created multiple child processes using fork().
-Used wait() and waitpid() for process synchronization.
-Demonstrated zombie process creation and prevention.
+Process Synchronization
+1. wait()
+wait() makes the parent process wait until any one of its child processes finishes.
+It is used to synchronize the execution of parent and child processes.
+It also allows the parent to collect the child's exit status.
+This prevents the terminated child from remaining as a zombie process.
+2. waitpid()
+waitpid() allows the parent process to wait for a specific child process.
+It provides more control than wait().
+The parent can specify which child process it wants to wait for.
+It can also be used to collect the child's exit status and remove the zombie process.
+3. Zombie Process
+A zombie process is a child process that has finished execution, but its parent has not yet collected its exit status.
+The terminated child remains as an entry in the process table.
+The zombie process does not continue executing, but its process entry is still maintained.
+wait() or waitpid() can be used by the parent to collect the exit status and remove the zombie.
+4. Process Table
+The process table is a data structure maintained by the operating system to store information about running and terminated processes.
+It contains important information such as the Process ID (PID), process state, and other process-related details.
+When a child process terminates, its entry may remain in the process table as a zombie until the parent collects its exit status.
+wait() or waitpid() allows the operating system to remove the zombie's process table entry
